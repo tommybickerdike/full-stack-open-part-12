@@ -1,0 +1,24 @@
+docker container start peaceful_jones
+
+docker run -it ubuntu bash
+
+apt-get update
+
+apt-get -y install nano
+
+mkdir /usr/src/app/
+
+touch /usr/src/app/index.js
+
+nano /usr/src/app/index.js
+
+apt-get -y install curl
+
+curl -sL https://deb.nodesource.com/setup_16.x | bash
+
+apt install -y nodejs
+
+node /usr/src/app/index.js
+
+exit
+
