@@ -8,7 +8,7 @@ services:
       - 3000:3000
     container_name: todo-frontend-prod 
     environment: 
-      - REACT_APP_BACKEND_URL=//localhost:3210
+      - REACT_APP_BACKEND_URL=//backend:3000
   backend:
     image: todo-backend-prod
     build:
