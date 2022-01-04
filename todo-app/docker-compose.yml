@@ -1,26 +1,24 @@
 services:
   frontend:
-    image: todo-frontend
+    image: todo-frontend-prod
     build:
-      context: ./todo-frontend # The context will pick this directory as the "build context"
-      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
-    volumes:
-      - ./todo-frontend:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+      context: ./todo-frontend 
+      dockerfile: Dockerfile 
     ports:
       - 3000:3000
-    container_name: todo-frontend # This will name the container hello-front-dev
+    container_name: todo-frontend-prod 
     environment: 
       - REACT_APP_BACKEND_URL=//localhost:3210
   backend:
-    image: todo-backend
+    image: todo-backend-prod
     build:
-      context: ./todo-backend 
-      dockerfile: dev.Dockerfile 
+      context: ./todo-backend
+      dockerfile: Dockerfile 
     volumes:
       - ./todo-backend:/usr/src/app
     ports:
       - 3210:3000
-    container_name: todo-backend
+    container_name: todo-backend-prod
     environment: 
       - REDIS_URL=//redis:6379
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
@@ -48,7 +46,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 8080:80
-    container_name: reverse-proxy
+    container_name: reverse-proxy-prod
 
 volumes:
   mongo_data:
