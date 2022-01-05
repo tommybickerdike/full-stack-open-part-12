@@ -1,3 +1,12 @@
-# Full Stack Open Part 4
+Setting up docker containers
 
-https://fullstackopen.com/en/part4
+1) Set .env variables in root directory ./
+```
+MONGODB_URI=
+PORT=3003
+SECRET=anythinghere
+TEST_MONGODB_URI=
+```
+
+2) Build docker containers 
+`docker-compose -f docker-compose.dev.yml up --build`

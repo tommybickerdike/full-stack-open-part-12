@@ -1,12 +1,12 @@
 {
-	"name": "blog-list",
+	"name": "blog-list-frontend",
 	"version": "0.1.0",
 	"private": true,
 	"main": "index.js",
 	"engines": {
 		"node": "15.x"
 	},
-	"proxy": "http://localhost:3003",
+	"proxy": "http://backend:3003",
 	"dependencies": {
 		"@emotion/react": "^11.6.0",
 		"@emotion/styled": "^11.6.0",

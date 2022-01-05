@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    image: bloglist-backend
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile 
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3003:3003
+    container_name: bloglist-backend
+    environment: 
+      - MONGODB_URI
+      - SECRET
+      - TEST_MONGODB_URI
+
+  frontend:
+    image: bloglist-frontend
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile 
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+    container_name: bloglist-frontend
