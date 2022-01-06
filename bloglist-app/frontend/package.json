@@ -6,7 +6,7 @@
 	"engines": {
 		"node": "15.x"
 	},
-	"proxy": "http://backend:3003",
+	"proxy": "http://backend:3022",
 	"dependencies": {
 		"@emotion/react": "^11.6.0",
 		"@emotion/styled": "^11.6.0",
@@ -43,7 +43,6 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"eslint": "eslint .",
 		"cypress:open": "cypress open"

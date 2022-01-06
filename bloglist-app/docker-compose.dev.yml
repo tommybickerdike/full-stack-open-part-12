@@ -9,12 +9,13 @@ services:
     volumes:
       - ./:/usr/src/app
     ports:
-      - 3003:3003
+      - 3022:3022
     container_name: bloglist-backend
     environment: 
       - MONGODB_URI
       - SECRET
       - TEST_MONGODB_URI
+      - PORT
 
   frontend:
     image: bloglist-frontend

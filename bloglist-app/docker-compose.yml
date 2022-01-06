@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    image: bloglist-backend-prod
+    build:
+      context: ./backend
+      dockerfile: Dockerfile 
+    ports:
+      - 3022:3022
+    container_name: bloglist-backend-prod
+    environment: 
+      - MONGODB_URI
+      - SECRET
+      - TEST_MONGODB_URI
+
+  frontend:
+    image: bloglist-frontend-prod
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile 
+    ports:
+      - 3000:3000
+    container_name: bloglist-frontend-prod
+
+  proxy:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy-prod
